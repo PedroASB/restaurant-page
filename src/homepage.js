@@ -3,16 +3,10 @@ import hamburgerImage2 from "./imgs/hamburger-2.jpg";
 import sandwichImage from "./imgs/sandwich.jpg";
 import dessertImage from "./imgs/dessert.jpg";
 
-function switchToHomepage() {
-    const content = document.querySelector("#content");
+function createImagesBox() {
     const homepageImagesPaths = [
-        hamburgerImage1,
-        hamburgerImage2,
-        sandwichImage,
-        dessertImage,
+        hamburgerImage1, hamburgerImage2, sandwichImage, dessertImage
     ];
-
-    // Images box
     const imagesBox = document.createElement("div");
     imagesBox.id = "images-box";
 
@@ -29,7 +23,10 @@ function switchToHomepage() {
         imagesBox.appendChild(imageDiv);
     }
 
-    // Description
+    return imagesBox;
+}
+
+function createDescription() {
     const description = document.createElement("div");
     const descriptionTitle = document.createElement("h2");
     const descriptionText = document.createElement("div");
@@ -46,7 +43,10 @@ function switchToHomepage() {
                                 "a creamy milkshake or just the atmosphere, we've got the perfect spot for you.";
     description.appendChild(descriptionText);
 
-    // Info
+    return description;
+}
+
+function createInfo() {
     const info = document.createElement("div");
     const open = document.createElement("div");
     const location = document.createElement("div");
@@ -85,6 +85,15 @@ function switchToHomepage() {
 
     info.appendChild(open);
     info.appendChild(location);
+
+    return info;
+}
+
+function switchToHomepage() {
+    const content = document.querySelector("#content");
+    const imagesBox = createImagesBox();
+    const description = createDescription();
+    const info = createInfo();
 
     // Updating the content box
     content.innerHTML = "";
