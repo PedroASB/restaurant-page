@@ -179,6 +179,7 @@ body {
                 background-color: var(--primary-color-hover);
                 outline-color: var(--primary-color-hover);;
                 cursor: pointer;
+
                 img {
                     opacity: 100%;
                 }
