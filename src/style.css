@@ -50,7 +50,7 @@
     --secondary-color: #729e94;
     --tertiary-color: #ffe368;
     --gray-border-color: #999999;
-    --font-color-black: #222222;
+    --font-color-black: #313131;
     --branding-gap: 45px;
 }
 
@@ -191,9 +191,43 @@ header nav {
 #content {
     display: flex;
     flex-direction: column;
-    gap: 32px;
     margin: 32px 0;
     flex: 1;
+    gap: 32px;
+}
+
+/* Contact */
+#content.contact {
+    align-items: center;
+}
+
+#content.contact h2 {
+    font-size: 1.5rem;
+    font-family: "Shrikhand", "Roboto", var(--system-ui);
+    color: var(--font-color-black);
+}
+
+#content.contact h2 + div {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    font-size: 1.1rem;
+    
+    .label {
+        padding: 16px;
+        border: 3px solid #fff;
+        outline: 3px solid var(--secondary-color);
+        background-color: var(--secondary-color);
+        color: #fff;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .title {
+        font-weight: 600;
+    }
 }
 
 /* Homepage */
@@ -230,8 +264,6 @@ header nav {
         font-family: "Shrikhand", var(--system-ui);
     }
 }
-
-/* Info */
 
 #info {
     display: flex;

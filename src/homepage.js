@@ -95,8 +95,9 @@ function switchToHomepage() {
     const description = createDescription();
     const info = createInfo();
 
-    // Updating the content box
+    // Updates the content box
     content.innerHTML = "";
+    content.className = "homepage";
     content.appendChild(imagesBox);
     content.appendChild(description);
     content.appendChild(info);
