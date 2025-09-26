@@ -68,6 +68,19 @@ body {
     padding: 20px 0;
 }
 
+#container {
+    position: relative;
+    background-color: #f8f7ee;
+    border: 12px solid var(--gray-border-color);
+    border-radius: 32px;
+    width: 1000px;
+    margin-top: var(--branding-gap);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
 #branding {
     background-color: var(--primary-color);
     border-radius: 32px;
@@ -115,78 +128,64 @@ body {
             font-family: "Roboto Slab", var(--system-ui);
         }
     }
-
-    & + .lines {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        position: absolute;
-        top: 30px;
-
-        .line {
-            height: 4px;
-            width: 978px;
-            background-color: var(--primary-color);
-        }
-    }
 }
 
-#container {
-    position: relative;
-    background-color: #f8f7ee;
-    border: 12px solid var(--gray-border-color);
-    border-radius: 32px;
-    width: 1000px;
-    margin-top: var(--branding-gap);
+#container > .lines {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex: 1;
+    gap: 8px;
+    position: absolute;
+    top: 30px;
+
+    .line {
+        height: 4px;
+        width: 978px;
+        background-color: var(--primary-color);
+    }
 }
 
 #container > .wrapper {
     width: 800px;
+}
 
-    header nav {
+header nav {
+    display: flex;
+    gap: 32px;
+    flex: 1;
+
+    button {
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 0;
+        width: 100%;
+        font-weight: 600;
+        border: 2px solid #fff;
+        outline: 2px solid var(--primary-color);
         display: flex;
-        gap: 32px;
-        flex: 1;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
 
-        button {
-            background-color: var(--primary-color);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 0;
-            width: 100%;
-            font-weight: 600;
-            border: 2px solid #fff;
-            outline: 2px solid var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            position: relative;
+        img {
+            position: absolute;
+            width: 20px;
+            left: 15px;
+            opacity: 0%;
+        }
+
+        &:hover {
+            background-color: var(--primary-color-hover);
+            outline-color: var(--primary-color-hover);;
+            cursor: pointer;
 
             img {
-                position: absolute;
-                width: 20px;
-                left: 15px;
-                opacity: 0%;
-            }
-
-            &:hover {
-                background-color: var(--primary-color-hover);
-                outline-color: var(--primary-color-hover);;
-                cursor: pointer;
-
-                img {
-                    opacity: 100%;
-                }
+                opacity: 100%;
             }
         }
     }
-
 }
 
 #content {
@@ -196,6 +195,8 @@ body {
     margin: 32px 0;
     flex: 1;
 }
+
+/* Homepage */
 
 #images-box {
     display: grid;
@@ -228,8 +229,9 @@ body {
         margin-bottom: 4px;
         font-family: "Shrikhand", var(--system-ui);
     }
-
 }
+
+/* Info */
 
 #info {
     display: flex;
